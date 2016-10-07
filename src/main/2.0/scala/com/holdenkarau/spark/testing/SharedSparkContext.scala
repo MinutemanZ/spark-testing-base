@@ -34,14 +34,14 @@ trait SharedSparkContext extends BeforeAndAfterAll with SparkContextProvider {
     super.beforeAll()
   }
 
-  override def afterAll() {
-    try {
-      LocalSparkContext.stop(_spark)
-      _spark = null
-    } finally {
-      super.afterAll()
-    }
-  }
+  // override def afterAll() {
+  //   try {
+  //     LocalSparkContext.stop(_spark)
+  //     _spark = null
+  //   } finally {
+  //     super.afterAll()
+  //   }
+  // }
 
   override val conf = SharedSparkContext.conf
 
